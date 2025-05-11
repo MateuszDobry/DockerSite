@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona Logowania</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Witaj w naszej aplikacji!</h1>
+    </div>
+    <div class="container">
+        <form id="loginForm">
+            <div>
+                <label for="email">Podaj e-maila:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Zaloguj się</button>
+            <button type="button" id="exitButton">Wyjdź</button>
+        </form>
+        <p id="message" style="color:red;"></p>
+    </div>
+    <script src="login.js"></script> 
+</body>
+</html>

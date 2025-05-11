@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: usersdb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypass
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    restart: always
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: myuser
+      DB_PASSWORD: mypass
+      DB_NAME: usersdb
+      NODE_ENV: development
+    networks:
+      - app-network
+volumes:
+  mysql-data: 
+
+networks:
+  app-network:
+    driver: bridge
