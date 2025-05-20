@@ -6,7 +6,7 @@ CREATE USER IF NOT EXISTS 'mateusz@gmail.com'@'%' IDENTIFIED BY 'Mati123';
 GRANT ALL PRIVILEGES ON usersdb.* TO 'user@github.com'@'%';
 GRANT ALL PRIVILEGES ON usersdb.* TO 'mateusz@gmail.com'@'%';
 
-CREATE DATABASE IF NOT EXISTS usersdb;
+
 USE usersdb;
 CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) NOT NULL,
