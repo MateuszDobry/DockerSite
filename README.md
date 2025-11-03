@@ -9,4 +9,6 @@ Backend: Node.js (Express.js)
 Database: MySQL
 Containerization: Docker, Docker Compose
 
+Work in progress
+
 I Encourage you to check out this page 😁
